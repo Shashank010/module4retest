@@ -1,0 +1,75 @@
+<form (ngSubmit)="addStudent()" #addForm="ngForm">
+  <table class="table table-border">
+    <tr><th colspan="2">Add Student</th></tr>
+    <tr><td> ID</td>
+      <td><input [(ngModel)]="stu.Id" name ="Id"  #Id=ngModel 
+            placeholder="Enter  ID"></td>
+          <!-- <div *ngIf="Id.invalid" class="alert alert-danger">
+           ID is required
+          </div> -->
+      </tr>
+    <tr><td>Student Name</td>
+      <td><input [(ngModel)]="stu.studName" name ="studName"  #studName=ngModel 
+              placeholder="Enter student Name" ></td>
+               <!-- <div *ngIf="studName.invalid" class="alert alert-danger">
+                student name is required
+              </div>  -->
+           
+    <tr><td>mobile</td>
+        <td><input [(ngModel)]="stu.mobile" name ="mobile" #mobile=ngModel 
+               placeholder="Enter Mobile Number"></td>
+              <!-- <div *ngIf="mobilePrice.invalid" class="alert alert-danger">
+                Mobile Number is required
+              </div> -->
+            </tr>
+          
+          
+                <!-- <tr><td>Date of Birth</td>
+            <td><input [(ngModel)]="stu.Dob" name ="Dob"  #Dob=ngModel required
+                    placeholder="Enter Date of Birth"></td>
+            </tr> -->
+
+            <tr><td>Address</td>
+              <td><input [(ngModel)]="stu.address" name ="address"  #address=ngModel 
+                      placeholder="Enter Address" ></td>
+                       <!-- <div *ngIf="address.invalid" class="alert alert-danger">
+                        Address is required
+                      </div>  -->
+    <tr><th colspan="2">
+        <button type="submit" [disabled]="!addForm.valid">Save Student</button>
+    </th></tr>
+  </table>  
+</form>
+
+{{addForm.valid | json}}
+{{addForm.value}}
+<div class="container">
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Student no</th>
+              <!-- <th>Date of Birth</th> -->
+              <th>Address</th>
+             
+          </tr>
+      </thead>
+      <tbody>
+          <!----------------USING *ngFor------------------------>
+          <tr *ngFor="let stu of stuList">
+              
+             
+              <td>{{stu.Id}}</td>
+              <td>{{stu.studName}}</td>
+              <td>{{stu.mobile}}</td>
+              <!-- <td>{{stu.Dob}}</td> -->
+              <td>{{stu.address}}</td>
+          </tr>
+      </tbody>
+  </table>
+  <div *ngFor="let stu of stuList">
+  {{ stu | json}}
+  </div>
+</div>

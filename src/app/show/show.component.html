@@ -1,0 +1,41 @@
+<div class="container">
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <!-- <th>Dob</th> -->
+              <th>mobile</th>
+              <th>address </th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!----------------USING *ngFor------------------------>
+          <tr *ngFor="let stu of stuList">
+              
+              <td>{{stu.Id}}</td>
+              <td>{{stu.studName}}</td>
+              <td>{{stu.mobile}}</td>
+              <!-- <td>{{stu.Dob}}</td> -->
+              <td>{{stu.address}}</td>
+              
+              <td><button class="btn btn-outline-danger" (click)="delete(i)">Delete</button></td>
+          </tr>
+          <!-- <tr>
+              <td>101</td>
+              <td>Ashok</td>
+              <td>9090909090</td>
+              <!-- <td>{{stu.Dob}}</td> -->
+               <!-- <td>Mumbai
+
+              </td>
+              <td><button class="btn btn-outline-danger" (click)="delete(i)">Delete</button></td> --> 
+
+          <!-- </tr>  -->
+      </tbody>
+  </table>
+
+  <div *ngFor="let stu of stuList"></div>
+</div>
